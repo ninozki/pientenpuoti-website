@@ -1,0 +1,22 @@
+p {
+    color: rgb(59, 59, 255);
+    font-family: georgia;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+    color: rgb(59, 59, 255);
+    font-family: georgia;
+    font-size: 50px;
+}
+
+body{
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 96px;
+    padding-right: 24px;
+    background-color: rgb(0, 240, 240);
+}
