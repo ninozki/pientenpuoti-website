@@ -92,7 +92,7 @@
 
 .store-Middle-section {
 
-    flex: 1;
+    flex: 1 1 1;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -108,17 +108,31 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: 80;
+
     }
 
 
+
+.etusivu-middle-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+
 .map-container {
-    width: 535px;
-    height: 535px;
+    width: 750px;
+    height: 750px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    background-color: #06ecba;
+    }
 
 
 
@@ -130,13 +144,81 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    padding-top: 0px;
+    width: 750px;
+    background-color: rgb(0, 240, 240);
+    }
+
+
+
+.leftside-etusivu {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    }
+
+.left-section-etusivu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    padding-top: 120px;
+    width: 100%;
+    }
+
+.left-section-image {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    }
+
+
+.rightside-etusivu {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    }
+
+.right-section-etusivu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    width: 100%;
+    padding-top: 120px;
+    }
+
+.right-section-image {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-clip-margin: content-box;
+    overflow: clip;
     }
 
 
 .logo {
-    width: 535px;
-    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 750px;
+    max-height: 680px;
+    position: relative;
     }
+
 
 .item {
     display: grid;

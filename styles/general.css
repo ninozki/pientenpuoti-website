@@ -10,7 +10,9 @@ p {
 h1 {
     color: rgb(59, 59, 255);
     font-family: georgia;
-    font-size: 50px;
+    font-size: 75px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 body{
@@ -19,4 +21,15 @@ body{
     padding-left: 96px;
     padding-right: 24px;
     background-color: rgb(0, 240, 240);
+}
+
+.body-etusivu {
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: rgb(0, 240, 240);
+    background-image: url("https://st.depositphotos.com/1737105/5130/i/950/depositphotos_51304561-stock-photo-colorful-green-pink-blue-yellow.jpg"); 
+    background-position: center center; 
+    background-size: 100% 100%; 
 }
