@@ -33,60 +33,62 @@
                   </form>
                   </div>
                   
-                <div id="Galleria" style="margin: 0;width: 100%;text-align: center;"></div>
-
-                <script type="text/javascript" src="json.js"></script>
-                    <script>
-                    let AllItems=[];
-                    galleria=document.getElementById("Galleria");
-                    
-                    
-                    function Make(source, desctxt, tags){//function to create an image
-                    div = document.createElement('div');
-                    div.className = 'item';
-                    div.setAttribute("tags",tags)
-                    
-                    a = document.createElement('a');
-                    a.target = '_blank';
-                    a.href = source
-                    
-                    img = document.createElement('img');
-                    img.src = source;
-                    img.className="tuote";
-                    img.width=600;
-                    img.height=400;
-                    
-                    a.appendChild(img);
-                    div.appendChild(a);
-                    
-                    desc = document.createElement('div');
-                    desc.className = 'tuote-info';
-                    desc.textContent = desctxt;
-                    
-                    div.appendChild(desc);
-                    
-                    galleria.appendChild(div);
-                    AllItems.push(div);
-                    }
-                    
-                    
-                    for (let i = 0; i < json.length; i++) {try{
-                    
-                    //for (j=0; j!=50;j++){Make(json[i].src, json[i].desc, json[i].tags);}//creates every element 100 times :D. For Testing
-                    Make(json[i].src, json[i].desc, json[i].tags);
-                    }
-                    catch{console.error(json[i])}}
-                    
-                    //console.log(AllItems)
-                    
-                    function Search(){
-                    words=document.querySelector("div>form>input[type=text]").value.split(" ")
-                    AllItems.forEach(elm=>{if (!(words.every(item=>elm.getAttribute("tags").includes(item.toLowerCase())))){elm.style.display="none"}else{elm.style.display=""}})
-                    }
-                </script>
+                
 
             <div class="store-Middle-section">
                 <div class="myytavat-tavarat">
+                       <div id="Galleria" style="margin: 0;width: 100%;text-align: center;"></div>
+                        
+                        <script type="text/javascript" src="json.js"></script>
+                            <script>
+                            let AllItems=[];
+                            galleria=document.getElementById("Galleria");
+
+
+                            function Make(source, desctxt, tags){//function to create an image
+                            div = document.createElement('div');
+                            div.className = 'item';
+                            div.setAttribute("tags",tags)
+
+                            a = document.createElement('a');
+                            a.target = '_blank';
+                            a.href = source
+
+                            img = document.createElement('img');
+                            img.src = source;
+                            img.className="tuote";
+                            img.width=600;
+                            img.height=400;
+
+                            a.appendChild(img);
+                            div.appendChild(a);
+
+                            desc = document.createElement('div');
+                            desc.className = 'tuote-info';
+                            desc.textContent = desctxt;
+
+                            div.appendChild(desc);
+
+                            galleria.appendChild(div);
+                            AllItems.push(div);
+                            }
+
+
+                            for (let i = 0; i < json.length; i++) {try{
+
+                            //for (j=0; j!=50;j++){Make(json[i].src, json[i].desc, json[i].tags);}//creates every element 100 times :D. For Testing
+                            Make(json[i].src, json[i].desc, json[i].tags);
+                            }
+                            catch{console.error(json[i])}}
+
+                            //console.log(AllItems)
+
+                            function Search(){
+                            words=document.querySelector("div>form>input[type=text]").value.split(" ")
+                            AllItems.forEach(elm=>{if (!(words.every(item=>elm.getAttribute("tags").includes(item.toLowerCase())))){elm.style.display="none"}else{elm.style.display=""}})
+                            }
+                        </script>
+                    
                     <div class="item">
                         <img class="tuote" src="tuotteet/tuote1.jpg">
                         <div class="item-name">Tuote 1
