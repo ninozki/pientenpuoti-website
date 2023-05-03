@@ -1005,9 +1005,9 @@ const json=[
   const imgElement = document.createElement("img");
   imgElement.src = image.src;
   imgElement.alt = image.desc; // Käytä kuvauksesta alt-tekstinä
-  imgElement.classList.add("custom-image-class"); // Lisää luokka kuvaan
+  imgElement.classList.add("tuote"); // Lisää luokka kuvaan
 
   // Lisää kuva haluamaasi elementtiin, esimerkiksi "container"
-  const container = document.getElementById("container");
+  const container = document.getElementById("item-info");
   container.appendChild(imgElement);
   });
