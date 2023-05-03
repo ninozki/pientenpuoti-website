@@ -1,4 +1,4 @@
-const json=[
+json=[
     {"src":"images/kello.jpg", "desc":"testi 1","tags":"sininen kello pöllö"},
     {"src":"gallery/2023-02-21.jpg", "desc":"testi 2","tags":"pinkki vaaleanpunainen valkoinen"},
     {"src":"gallery/2023-02-21 (1).jpg", "desc":"testi 3","tags":"pitkähihainen paita keltainen sininen"},
@@ -1000,14 +1000,3 @@ const json=[
     {"src":"gallery/2023-02-21 (4).jpg", "desc":"testi 6","tags":"ulko haalari pinkki vaaleanpunainen musta sininen"},
     {"src":"gallery/2023-02-21 (5).jpg", "desc":"testi 7","tags":"musta pinkki vaaleanpunainen"}
     ]
-
-  json.forEach((image) => {
-  const imgElement = document.createElement("img");
-  imgElement.src = image.src;
-  imgElement.alt = image.desc; // Käytä kuvauksesta alt-tekstinä
-  imgElement.classList.add("tuote"); // Lisää luokka kuvaan
-
-  // Lisää kuva haluamaasi elementtiin, esimerkiksi "container"
-  const container = document.getElementById("item-info");
-  container.appendChild(imgElement);
-  });
