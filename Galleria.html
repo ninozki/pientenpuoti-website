@@ -1,5 +1,7 @@
 <!DOCTYPE html>
     <html>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
         <head>
             <title>Pienten Puoti</title>
             <link rel="stylesheet" href="styles/pientenpuoti.css">
@@ -7,11 +9,11 @@
         </head>
 
         <body>
-            <div class="header">
+                <div class="header">
                 <p class="otsikko" onclick="location.href='index.html';" style="cursor: pointer;">Pienten Puoti</p>
                 <div class="linkki" onclick="location.href='Galleria.html';" style="cursor: pointer;">Galleria</div>
                 <div class="linkki" onclick="location.href='Yhteystiedot.html';" style="cursor: pointer;">Ota Yhteyttä</div>
-              <!--  <div class="linkki" onclick="location.href='Kirjaudu.html';" style="cursor: pointer;">Kirjaudu</div>
+                <!--  <div class="linkki" onclick="location.href='Kirjaudu.html';" style="cursor: pointer;">Kirjaudu</div>
                 <div class="linkki" onclick="location.href='Rekisteroidy.html';" style="cursor: pointer;">Rekisteröidy</div>
                 <div class="linkki" onclick="location.href='Ostoskori.html';" style="cursor: pointer;">Ostoskori</div> -->
                 <a class="linkki" 
@@ -20,10 +22,66 @@
                     target="_blank" rel="noreferrer" 
                     style="cursor: pointer;">Facebook Sivut
                 </a>
-            </div>
+                </div>
 
+                <div style="width: 100%;display: flex;align-items: center;justify-content: center;">
+                    <form onsubmit="Search();return false" style="width: 100%;">
+                      <input onkeyup="Search()" autocomplete="off" type="text" placeholder="Etsi. esim. musta huppari" style="text-align: center; border: 1px solid black; display: inline-block; width: 90%;height: 50px;font-size: 30px;margin-top: 50px;margin-bottom: 50px;border-radius: 10px" autofocus>
+                      <input type="submit" style="display: none;">
+                  </form>
+                  </div>
+                  
+                <div id="Gallery" style="margin: 0;width: 100%;text-align: center;"></div>
 
-
+                <script type="text/javascript" src="json.js"></script>
+                    <script>
+                    let AllItems=[];
+                    gallery=document.getElementById("Galleria");
+                    
+                    
+                    function Make(source, desctxt, tags){//function to create an image
+                    div = document.createElement('div');
+                    div.className = 'galleria';
+                    div.setAttribute("tags",tags)
+                    
+                    a = document.createElement('a');
+                    a.target = '_blank';
+                    a.href = source
+                    
+                    img = document.createElement('img');
+                    img.src = source;
+                    img.className="image";
+                    img.width=600;
+                    img.height=400;
+                    
+                    a.appendChild(img);
+                    div.appendChild(a);
+                    
+                    desc = document.createElement('div');
+                    desc.className = 'desc';
+                    desc.textContent = desctxt;
+                    
+                    div.appendChild(desc);
+                    
+                    gallery.appendChild(div);
+                    AllItems.push(div);
+                    }
+                    
+                    
+                    for (let i = 0; i < json.length; i++) {try{
+                    
+                    //for (j=0; j!=50;j++){Make(json[i].src, json[i].desc, json[i].tags);}//creates every element 100 times :D. For Testing
+                    Make(json[i].src, json[i].desc, json[i].tags);
+                    }
+                    catch{console.error(json[i])}}
+                    
+                    //console.log(AllItems)
+                    
+                    function Search(){
+                    words=document.querySelector("div>form>input[type=text]").value.split(" ")
+                    AllItems.forEach(elm=>{if (!(words.every(item=>elm.getAttribute("tags").includes(item.toLowerCase())))){elm.style.display="none"}else{elm.style.display=""}})
+                    }
+                </script>
 
             <div class="store-Middle-section">
                 <div class="myytavat-tavarat">
